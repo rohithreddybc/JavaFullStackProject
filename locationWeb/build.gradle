@@ -20,6 +20,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'  //provides the necessary libraries for JSP compilation and execution.
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'  //This dependency is required for JSP compilation, but it is not needed at runtime, so it is added to the compileOnly block.
+	
 }
 
 tasks.named('bootBuildImage') {
